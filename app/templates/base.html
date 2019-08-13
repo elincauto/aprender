@@ -7,12 +7,15 @@
 </head>
 <body>
     <header>
-        <p> 
-            <a href="./">Inicio</a> |  <a href="./">Second page</a>
-        </p>
+        <h1>Simple Exchanger</h1>
     </header>
-    <h1>Simple Exchanger</h1>
-    <p>Hola, mundo</p>
+    <div  class='container'>
+        <p class="menu">
+                <a href="./">Inicio</a> |  <a href="./">Second page</a>
+        </p>
+        {% block body %}{%endblock%}
+
+    </div>
     <footer>
         <p>&copy: -VMN-</p>
     </footer>
