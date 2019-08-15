@@ -1,0 +1,5 @@
+fecha, descripcion,cantidad comprada,moneda comprada,cantidad pagada,moneda pagada,precio unitario  
+2019-07-01,'Concepto 1',1, BTC, 6000, EUR, 6000
+2019-07-02,'Concepto 2',2,BTC,11800,EUR,5900
+2019-07-03,'Concepto 3',8000, EUR,1,BTC,0,00125
+2019-07-15,'Compra loca',1,BTC,18000,EUR,18000

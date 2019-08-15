@@ -1,0 +1,17 @@
+{% extends 'base.html'  %}
+{% block title %}  Sdios{%endblock%}
+{% block body%}
+
+<h1>Compra de divisas</h1>
+<p>Rellene los datos de la Compra</p>
+<form action= "nuevacompra" method='POST'>
+    <input type='date' name='fecha' id='fecha' placeholder='fecha'><br/>
+    <input type='date' name='concepto' id='concepto' placeholder='concepto'><br/>
+    <select name='monedacomprada' id="moneda comprada">
+        <option>value="EUR">Euro </option>
+    </select>
+
+</form>
+
+{%endblock%}
+
