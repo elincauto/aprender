@@ -16,6 +16,18 @@
         {% block body %}{%endblock%}
 
     </div>
+
+    <div class='mensaje-error'>
+    
+        {% with messages = get_flashed_message() %}
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for message  in messages %}
+                    <li>{{message}}</li>
+                    {%end%}
+                </ul>
+            {% end if %}
+    </div>
     <footer>
         <p>&copy: -VMN-</p>
     </footer>

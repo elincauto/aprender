@@ -1,5 +1,5 @@
 {% extends 'base.html'  %}
-{% block title %}  Sdios{%endblock%}
+{% block title %}  Compra de divisas {%endblock%}
 {% block body%}
 
 <h1>Compra de divisas</h1>
@@ -8,8 +8,25 @@
     <input type='date' name='fecha' id='fecha' placeholder='fecha'><br/>
     <input type='date' name='concepto' id='concepto' placeholder='concepto'><br/>
     <select name='monedacomprada' id="moneda comprada">
-        <option>value="EUR">Euro </option>
+        <option>value="EUR">Euro</option>
+        <option>value="BTC">Bitcoin</option>
+        <option>value="ETH">Ethereum</option>
+        <option>value="LTC">Litecoin</option>
+
     </select>
+    <br/>
+    <input type='number' name='cantidadComprada' id="cantidadComprada" placeholder='cantidadComprada'><br/>
+    <select name='monedaPagada'  id='monedaPagada'>
+        <option>value="EUR">Euro</option>
+        <option>value="BTC">Bitcoin</option>
+        <option>value="ETH">Ethereum</option>
+        <option>value="LTC">Litecoin</option>
+
+    </select>
+    <br/>
+    <input type="number" name='cantidadPagada' id='cantidadPagada' placeholder='cantidadPagada'><br/>
+    <input type="submit" value="Comprar">
+
 
 </form>
 
