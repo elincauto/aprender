@@ -26,14 +26,14 @@ def compra():
         return render_template('nuevacompra.html')
 
     else:
-        msg=validar(request.values)  != True
-        if msg!=True
-            flash(msg)
-            return render_template('nuevacompra.html')
+        msg=validar(request.values)
+        if msg!=True:
+            
+            return render_template('nuevacompra.html',errores=msg)
        
         fMovimientos=open(ficheromovimientos,'a+')
         precioUnitario=request.values['cantidadPagada']/request.values['cantidadComprada']  
-        registro='{},'{}',{},{},{},{},{}\n'.format(request.values['fecha'],
+        registro='{},"{}",{},{},{},{},{}\n'.format(request.values['fecha'],
         request.values['concepto'],request.values['monedaComprada'],
         request.values['cantidadComprada'],
         request.values['monedaPagada'],
@@ -43,19 +43,29 @@ def compra():
         return redirect(url_for('index'))
     
     def validar(values):
+
+        errores=[]
+
         if values['fecha']=='':
-            return 'Debe informar la fecha'
+            errores.append( 'Debe informar la fecha')
 
         if values['concepto']=='':
-            return 'Debe informar el concepto'
+            errores.append('Debe informar el concepto')
 
-         if values['cantidadComprada']=='':
-            return 'Debe informar una cantidad mayor que cero para cantidad comprada'
+        if values['cantidadComprada']=='':
+            errores.append( 'Debe informar una cantidad mayor que cero para cantidad comprada')
 
         if values['cantidadPagada']=='':
-            return 'Debe informar un valor mayor que cero'
+            errores.append( 'Debe informar un valor mayor que cero')
+        
+        if len(errores)==0:
+            return True
+        else:
+            return errores
 
-        return True
+@app.route('/skeleton.css')
+def skeleton():
+    return 'Hola,skeleton'
 
 
 
