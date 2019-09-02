@@ -1,13 +1,14 @@
 {% extends 'base.html'  %}
 {% block title %} Exchanger {%endblock%}
 {% block body%}
+<form action="/procesar registro" method="POST">
     <table class="u-full-width">
         <tr>
 
             <th>Fecha </td>
             <th>Descripcion</td>
             <th>Moneda Comprada</td>
-            <th> Cantidad Comprada</td>
+            <th> Comprada</td>
             <th>Moneda pagada</td>
             <th>Cantidad pagada</td>
             <th>Precio unitario</td>
@@ -16,7 +17,7 @@
 
         {%for movimiento in movimientos %}
         <tr>
-            <td><input type="radio" name="ix" value = '{{loop.index}}''></td>
+            <td><input type="radio" name="ix" value = '{{loop.index}}'></td>
             <td>movimiento[0]</td>
             <td>movimiento[1]</td>
             <td>movimiento[2]</td>
@@ -27,11 +28,13 @@
         </tr>
         {%endfor%}
 
+
     </table>
     <br/>
-    <form action="/nuevacompra">
-        <button type="submit" class="mi botón">Borrar</button>
-        <button type="submit" class="mi botón" > Nueva compra</button>
-    </form>
+        <a href="/nuevacompra" class="button button-primary">Nueva compra</a>
+        <button name="btnselected" value="Modificar" type="submit" class="mi botón" button-primary> Modificar</button>
+        <button name="btnselected" value="borrar" type="submit" class="mi boton" button-primary> Borrar</button>
+        
+</form>
 {%endblock%}
 
